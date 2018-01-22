@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "148446319637",
+    "firebase_url": "https://genusconnect-fafe9.firebaseio.com",
+    "project_id": "genusconnect-fafe9",
+    "storage_bucket": "genusconnect-fafe9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148446319637:android:d1d69379a9c9f876",
+        "android_client_info": {
+          "package_name": "org.genus.connect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148446319637-nul2pial7lnvgt7r0ed30hm0ldcaf7mc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4EmvM1-YYxznZbis9SYmIQjaqOWv4i1M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

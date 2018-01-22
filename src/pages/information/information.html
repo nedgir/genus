@@ -1,0 +1,48 @@
+<ion-header>
+  <global-header page="INFORMATION" group="community"[data]="madeChanges()"></global-header>
+</ion-header>
+<ion-content>
+  <ion-item-divider color="light"></ion-item-divider>
+  <ion-list>
+    <ion-item>
+      <ion-label>First Name</ion-label>
+      <ion-input text-right type="text" [(ngModel)]="commInfoViewModel.firstName" (change)="onChange()"></ion-input>
+      <ion-icon *ngIf="validEntry(commInfoViewModel.firstName, 'name')" name="checkmark-circle" item-end color="secondary"></ion-icon>
+      <ion-icon *ngIf="!validEntry(commInfoViewModel.firstName, 'name')" name="close-circle" item-end color="danger"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>Last Name</ion-label>
+      <ion-input text-right type="text" [(ngModel)]="commInfoViewModel.lastName" (change)="onChange()"></ion-input>
+      <ion-icon *ngIf="validEntry(commInfoViewModel.lastName, 'name')" name="checkmark-circle" item-end color="secondary"></ion-icon>
+      <ion-icon *ngIf="!validEntry(commInfoViewModel.lastName, 'name')" name="close-circle" item-end color="danger"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>Phone</ion-label>
+      <ion-input text-right type="tel" [(ngModel)]="commInfoViewModel.phone" (focusout)="phoneFocusOut(commInfoViewModel.phone)" (focusin)="phoneFocusIn(commInfoViewModel.phone)" (change)="onChange()"></ion-input>
+      <ion-icon *ngIf="!isNullEmptyEntry(commInfoViewModel.phone) && validEntry(commInfoViewModel.phone, 'phone')" name="checkmark-circle" item-end color="secondary"></ion-icon>
+      <ion-icon *ngIf="!isNullEmptyEntry(commInfoViewModel.phone) && !validEntry(commInfoViewModel.phone, 'phone')" name="close-circle" item-end color="danger"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input text-right type="text" [(ngModel)]="commInfoViewModel.email" (change)="onChange()"></ion-input>
+      <ion-icon *ngIf="!isNullEmptyEntry(commInfoViewModel.email) && validEntry(commInfoViewModel.email, 'email')" name="checkmark-circle" item-end color="secondary"></ion-icon>
+      <ion-icon *ngIf="!isNullEmptyEntry(commInfoViewModel.email) && !validEntry(commInfoViewModel.email, 'email')" name="close-circle" item-end color="danger"></ion-icon>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label>Emergency Number</ion-label>
+      <ion-input text-right type="text" [(ngModel)]="commInfoViewModel.emergencyNumber" (change)="onChange()"></ion-input>
+      <ion-icon *ngIf="!isNullEmptyEntry(commInfoViewModel.emergencyNumber) && validEntry(commInfoViewModel.emergencyNumber, 'phone')" name="checkmark-circle" item-end color="secondary"></ion-icon>
+      <ion-icon *ngIf="!isNullEmptyEntry(commInfoViewModel.emergencyNumber) && !validEntry(commInfoViewModel.emergencyNumber, 'phone')" name="close-circle" item-end color="danger"></ion-icon>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="is_mobile" class="btn-a">
+    <button class="update image" ion-button color="primary" (click)="changeImage()" block>Change Image..</button>
+  </div>
+  <div class="btn-b">
+    <button class="update" [disabled]="!allValidEntries()" *ngIf="madeChanges()" ion-button color="primary" (click)="updateInformation()"
+      block>Update</button>
+  </div>
+</ion-content>
+<ion-footer>
+  <global-tab></global-tab>
+</ion-footer>

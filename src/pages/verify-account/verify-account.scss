@@ -1,0 +1,105 @@
+page-verify-account {
+    text-align: center;
+    font-family:  'Montserrat-Regular';
+    font-size: 18px;
+    color: white;
+  
+    .myNavBar {
+      height: 150px;
+  
+      .toolbar-background {
+        background-color: rgb(71,119,110);
+      }
+  
+      img {
+        width: 90px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  
+    .thisContent {
+      background-color: rgb(110,193,179);
+  
+      .login-form {
+        margin: 20px 30px;
+      }
+  
+      ion-label{
+        color:white;
+        text-align: center;
+        white-space: normal;
+      }
+  
+      ion-input {
+        background: white;
+        border-radius: 5px;
+        height: 30px;
+        margin: 10px 0px;
+  
+        input {
+          margin: 5px 10px;
+        }
+      }
+  
+      .buttons {
+        border: 2px solid white;
+        background-color: rgb(71,119,110);
+        border-radius: 7px;
+        height: 35px;
+        margin: 10px 0px;
+        width: 100%;
+      }
+  
+      ion-item-divider{
+        background-color: rgb(110,193,179);
+        height: 25px !important;
+        border-color: rgb(110,193,179);
+      }
+    }
+  
+    .thisFooter .toolbar-background {
+      border: 1px rgb(110,193,179);
+      background-color: rgb(110,193,179);
+    }
+  
+    p {
+      color: white;
+    }
+
+    .strike {
+      display: block;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  
+    .strike > span {
+      position: relative;
+      display: inline-block;
+    }
+  
+    .strike > span:before,
+    .strike > span:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 9999px;
+      height: 2px;
+      background: #E9E9E9;
+    }
+  
+    .strike > span:before {
+      right: 100%;
+      margin-right: 15px;
+    }
+  
+    .strike > span:after {
+      left: 100%;
+      margin-left: 15px;
+    }
+  
+  
+  }
+  

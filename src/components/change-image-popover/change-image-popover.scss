@@ -1,0 +1,32 @@
+change-image-popover {
+	.top, .mid, .bot {
+		text-align: center;
+	}
+	.top {
+		font-size: 14px;
+		color: lightgray;
+	}
+	.fix-padding-left {
+		padding-left: 0px!important;
+		span {
+			margin-left: 16px;
+		}
+	}
+	.mid, .bot {
+		color: #488aff;
+    background-color: #FFF;
+	}
+	.mid {
+		border-top: 1px solid lightgray;
+		border-bottom: 1px solid lightgray;
+	}
+	.bot {
+		border-bottom: 1px solid transparent;
+	}
+	.no-margin-bottom {
+		margin-bottom: 0px!important;
+	}
+	.list-ios .item-block .item-inner {
+		border-bottom: 0px solid red;
+	}
+}

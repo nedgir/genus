@@ -1,0 +1,28 @@
+<div class="tab">
+  <ion-row>
+    <ion-col>
+      <button (click)="goHome()" *ngIf="showHome">
+        <img src="assets/Home.svg">
+      </button>
+
+      <button (click)="goToHelp()">
+        <img src="assets/HelpIcon.svg">
+      </button>
+    </ion-col>
+
+    <ion-col style="text-align:center;">
+      <button (click)="pageMedkit()" text-center center *ngIf="showEmergency">
+        <img src="assets/RedCross.svg">
+      </button>
+    </ion-col>
+
+    <ion-col>
+      <button (click)="clickCallLog()" style="float:right;" *ngIf="showCallLog" tappable>
+        <img src="assets/calllog.svg">
+      </button>
+      <button (click)="clickCall()" style="float:right;" *ngIf="showPhoneIcon" tappable>
+        <img src="assets/PhoneIcon.svg">
+      </button>
+    </ion-col>
+  </ion-row>
+</div>

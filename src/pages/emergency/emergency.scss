@@ -1,0 +1,98 @@
+page-emergency {
+  .righttd {
+    width: auto;
+  }
+
+  .emergency {
+    background-color: red;
+  }
+
+  .emergencytext {
+    color: white;
+    margin-left: 10px;
+  }
+
+  .notification-text {
+    text-align: justify;
+    margin: 10px;
+  }
+
+  .emergencyBtn {
+    background-color: red;
+    border-radius: 10px;
+    border-color: white;
+    border: solid;
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    color: white;
+    width: 120px;
+    height: 50px;
+  }
+
+  .border {
+    border-bottom: solid;
+    border-color: #e0e0d1;
+    border-width: thin;
+  }
+
+  .login-form {
+    //margin: 20px 30px;
+    background-color: #e0e0d1;
+  }
+
+  h2 {
+    font-size: 13px;
+    font-family: 'Montserrat-Regular';
+    margin: 2px;
+    font-weight: bold;
+    display: inline;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-family: 'Montserrat-Regular';
+    text-align: center;
+    font-weight: bold;
+    margin-top: 0;
+  }
+
+  .text-title {
+    font-weight: bold;
+    text-decoration-line: underline;
+    margin-left: 10px;
+  }
+
+  h4 {
+    font-size: 13px;
+    font-family: 'Montserrat-Regular';
+    margin: 2px 2px 2px 10px;
+  }
+
+  p {
+    margin-left: 10px;
+  }
+
+  .notifyBtn {
+    background-color: white;
+    border: solid;
+    border-color: #8a8a5c;
+    border-radius: 10px;
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    width: 120px;
+    height: 50px;
+  }
+
+  ion-item-divider.item.item-divider {
+    height: 80px !important;
+    text-align: center;
+  }
+
+  .redBtn {
+    .span.button-inner {
+      color: red;
+    }
+  }
+}

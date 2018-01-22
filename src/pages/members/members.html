@@ -1,0 +1,25 @@
+<ion-header>
+  <global-header page="MEMBERS" group="community" event="true"></global-header>
+</ion-header>
+<ion-content class="community-content">
+  <ion-list>
+    <ng-container *ngFor="let member of members">
+      <ion-item class="member-item">
+        <div class="inline" style="width: 70px;">
+          <div>
+            <img class="member-picture" [src]="member.icon" (error)="fallbackImage($event)"/>
+          </div>
+        </div>
+        <div class="inline">
+          <div><b>{{member.name}}</b> - {{member.permission}}</div>
+          <div>Events Created: {{member.eventsCreated}}</div>
+          <div>Member Since: {{member.memberSince | date: 'yMMMd'}}</div>
+          <div *ngIf="member.invitedByName">Invited By: {{member.invitedByName}}</div>
+        </div>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <global-tab></global-tab>
+</ion-footer>

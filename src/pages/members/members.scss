@@ -1,0 +1,18 @@
+page-members {
+  font-family: 'Montserrat-Light';
+  color:#3d3d3d;
+
+  .member-item {
+    border-bottom: 0.55px solid #c8c7cc;
+
+    .inline {
+      display: inline-block;
+
+      .member-picture {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+}

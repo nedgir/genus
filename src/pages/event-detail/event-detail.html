@@ -1,0 +1,154 @@
+<ion-header>
+  <global-header page="{{event_action}} {{eventType}}" group="community" [pop]="true"></global-header>
+</ion-header>
+<ion-content class="thisContent">
+  <ion-list>
+    <ion-item *ngIf="isNew">
+      <ion-segment color="community-green" [(ngModel)]="eventEdited.type">
+        <ion-segment-button value="call" (click)="toggleOptionSelect(eventEdited.type)"> Call </ion-segment-button>
+        <ion-segment-button value="visit" (click)="toggleOptionSelect(eventEdited.type)"> Event </ion-segment-button>
+      </ion-segment>
+    </ion-item>
+    <ion-item>
+      <ion-grid no-padding>
+        <ion-row no-padding>
+          <ion-col text-center no-padding (click)="optionsSelected = false">
+            {{segment_left}}
+            <ion-icon [style.visibility]="!optionsSelected?'visible':'hidden'" name="checkmark" color="community-green"></ion-icon>
+          </ion-col>
+          <ion-col text-center no-padding (click)="optionsSelected = true">
+            {{segment_right}}
+            <ion-icon [style.visibility]="optionsSelected?'visible':'hidden'" name="checkmark" color="community-green"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item>
+      <ion-label>Title</ion-label>
+      <ion-input *ngIf="eventEdited" text-right type="text" [(ngModel)]="eventEdited.title" disabled="{{!enable_edit}}"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="eventType === 'EVENT'">
+      <ion-label>Location</ion-label>
+      <ion-input *ngIf="eventEdited" text-right type="text" [(ngModel)]="eventEdited.location" disabled="{{!enable_edit}}"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="show_call_connected && eventType === 'CALL' && !optionsSelected" (click)="callConnected = !callConnected;">
+      <ion-label>Call connected?</ion-label>
+      <ion-icon [style.visibility]="callConnected?'visible':'hidden'" isActive="true" name="checkmark" color="community-green" item-end></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>Start Time</ion-label>
+      <ion-datetime (ionChange)="startDateChange()" displayFormat="M/D/YY, h:mm A" pickerFormat="MMM DD, YYYY h:mm A" [(ngModel)]="eventEdited.startDate" [disabled]="!enable_edit"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>End Time</ion-label>
+      <ion-datetime (ionChange)="endDateChange()" displayFormat="M/D/YY, h:mm A" pickerFormat="MMM DD, YYYY h:mm A" [(ngModel)]="eventEdited.endDate" [disabled]="!enable_edit"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-textarea [disabled]="!enable_edit" placeholder="Enter a brief description of the event." [(ngModel)]="eventEdited.notes"></ion-textarea>
+    </ion-item>
+    <ion-item *ngIf="eventType === 'EVENT' && enable_edit && show_req_assistance">
+      <ion-label>Request Assistance</ion-label>
+      <ion-toggle [(ngModel)]="requestAssistance" color="community-green"></ion-toggle>
+    </ion-item>
+    <ion-item *ngIf="show_include_observations && enable_edit && !eventEdited.observationSummaryGUID">
+      <ion-label>Include Observations?</ion-label>
+      <ion-toggle [(ngModel)]="include_observe" color="community-green"></ion-toggle>
+    </ion-item>
+    <ion-item *ngIf="show_include_observations && eventEdited.observationSummaryGUID">
+      <ion-label>Observations</ion-label>
+      <ion-icon item-end>
+        <div text-center class="observation-item-text">E</div>
+        <img class="background-none" style="width:27px; height:27px;" src="{{eventEdited.Emotional}}" />
+      </ion-icon>
+      <ion-icon item-end>
+        <div text-center class="observation-item-text">P</div>
+        <img class="background-none" style="width:27px; height:27px;" src="{{eventEdited.Physical}}" />
+      </ion-icon>
+    </ion-item>
+  </ion-list>
+  <ng-container *ngIf="include_observe; else other">
+    <ion-item-divider class="thisItem"> PHYSICAL HEALTH </ion-item-divider>
+    <ng-container *ngFor="let phy_category of active_phys_categories">
+      <ion-item>
+        <ion-label class="observation-title">{{phy_category.name}}</ion-label>
+        <ion-range [(ngModel)]="observation[phy_category.name]">
+          <img range-left class="background-none" style="width:30px; height:30px;" src="assets/phy_Sad_3.svg"/>
+          <img range-right class="background-none" style="width:30px; height:30px;" src="assets/phy_Happy_3.svg"/>
+        </ion-range>
+      </ion-item>
+    </ng-container>
+    <ion-item-divider class="thisItem"> EMOTIONAL HEALTH </ion-item-divider>
+    <ng-container *ngFor="let emo_category of active_emo_categories">
+      <ion-item>
+        <ion-label class="observation-title">{{emo_category.name}}</ion-label>
+        <ion-range [(ngModel)]="observation[emo_category.name]">
+          <img range-left class="background-none" style="width:30px; height:30px;" src="assets/phy_Sad_3.svg"/>
+          <img range-right class="background-none" style="width:30px; height:30px;" src="assets/phy_Happy_3.svg"/>
+        </ion-range>
+      </ion-item>
+    </ng-container>
+  </ng-container>
+  <ng-container *ngIf="!isNew">
+    <ion-item-divider class="thisItem"> SOCIAL </ion-item-divider>
+    <ion-list>
+      <ion-item>
+        <button ion-item no-lines (click)="comments()">{{originalEvent.commentsNum}} Comments</button>
+      </ion-item>
+      <ion-item>
+        <ion-label (click)="pressLike()" color="primary" class="thisLike"> {{getLikesText()}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+  <ion-item-divider class="thisItem"> {{getParticipantsText()}} </ion-item-divider>
+  <ion-list>
+    <ion-item>
+      <ion-label>{{communityName}}</ion-label>
+      <ion-icon isActive="true" name="{{getIcon(1)}}" item-end color="{{getIconColor(1)}}"></ion-icon>
+    </ion-item>
+    <ng-container *ngFor="let person of eventEdited.people">
+      <ion-item-sliding *ngIf="person.status">
+        <ion-item>
+          <ion-label>
+            {{person.name}}
+            <div *ngIf="person_flag == 2" class="declineReason">
+              {{person.declineReason}}
+            </div>
+          </ion-label>
+          <ion-icon isActive="true" name="{{getIcon(person.flags)}}" item-end color="{{getIconColor(person.flags)}}"></ion-icon>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="deletePerson(person)">
+            Delete
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ng-container>
+    <ion-item *ngIf="enable_edit">
+      <ion-label color="primary" class="thisLike" (click)="addInvite()">Add...</ion-label>
+    </ion-item>
+  </ion-list>
+  <ng-container *ngIf="requestAssistance">
+    <ion-item-divider class="thisItem"></ion-item-divider>
+    <ion-item (click)="requestAssistance = !requestAssistance">
+      <ion-label color="primary" class="thisLike">I Will Assist</ion-label>
+    </ion-item>
+  </ng-container>
+  <ng-container *ngIf="!isNew">
+    <ion-item-divider class="thisItem"></ion-item-divider>
+    <ion-item *ngIf="inEvent && (person_flag == 0 || person_flag == 2)" (click)="updatePersonFlag(1)">
+      <ion-label color="primary" class="thisLike">Able to Attend</ion-label>
+    </ion-item>
+    <ion-item *ngIf="inEvent && (person_flag == 0 || person_flag == 1)" (click)="updatePersonFlag(2)">
+      <ion-label color="primary" class="thisLike">Unable to Attend...</ion-label>
+    </ion-item>
+    <ion-item-divider class="thisItem">
+      <ng-container *ngIf="invited_date">
+        You were invited by {{eventEdited.reportedByName}} on {{invited_date | date:'mediumDate'}}
+      </ng-container>
+    </ion-item-divider>
+  </ng-container>
+  <ion-item *ngIf="enable_edit">
+    <ion-label (click)="save()" color="primary" class="thisLike"> Save </ion-label>
+  </ion-item>
+  <ion-item-divider class="thisItem"></ion-item-divider>
+</ion-content>

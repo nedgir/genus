@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar class ="myNavBar" hideBackButton=true>
+    <img class="personal-image" [style.border-width]="userPictureExists ? '3px' : '0px'" src="{{userPicture}}">
+    <div>Personal Profile</div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class ="thisContent">
+  <div class="login-form">
+    <ion-label>Name</ion-label>
+    <ion-input type="text" placeholder="Name" [(ngModel)]="firstName"></ion-input>
+    <ion-input type="text" placeholder="Last Name" [(ngModel)]="lastName"></ion-input>
+    <ion-label>Email</ion-label>
+    <ion-label>{{email}}</ion-label>
+    <button ion-button block class = "buttons" [hidden]="emailButtonHidden" (click)="pageConfirmEmail()">Confirm Email</button>
+    <ion-label>Phone</ion-label>
+    <ion-input type="tel" placeholder="Phone Number" [(ngModel)]="phone" (keypress)="validate()" (keydown)="validate()" (keyup)="validate()" (focusout)="phoneFocusOut(this.phone)" (focusin)="phoneFocusIn(this.phone)"></ion-input>
+    <button ion-button block class = "buttons" id ="myBtn" [hidden]="phoneNumberButtonHidden" (click)= "pageConfirmPhone()">Confirm Phone Number</button>
+    <ion-item-divider></ion-item-divider>
+    <ion-item *ngIf="touchIdAvailable" class="thisContent">
+      <ion-label>Login with TouchID</ion-label>
+      <ion-toggle color="secondary"></ion-toggle>
+    </ion-item>
+    <button ion-button block class = "buttons" (click)="pageChangePassword()">Change Password</button>
+    <button *ngIf="is_mobile" ion-button block class = "buttons" (click)="changeMyImage()">Change My Image</button>
+  </div>
+</ion-content>
+<ion-footer text-left class ="thisFooter">
+  <button class="previous-button" ion-button icon-start (click) = "back()">
+    <img class="chevron-left" src="assets/ChevronLeft.svg">
+    Done
+  </button>
+</ion-footer>

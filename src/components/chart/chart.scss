@@ -1,0 +1,77 @@
+chart {
+  .content-top {
+    height: 210px;
+  }
+
+  .chart-container {
+    position: absolute;
+    height: 130px;
+    width: 100%;
+  }
+
+  .chart-legend-item-container {
+    display: flex;
+    justify-content: space-around;
+
+    .chart-legend-item {
+      display: inline-flex;
+      align-items: center;
+
+      .chart-legend-color-strip {
+        height: 6px;
+        width: 50px;
+        border-radius: 10px;
+        margin-left: 5px;
+      }
+
+      img {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+
+  .legend-text {
+    font-size: 12px;
+    height: 12px;
+    margin-bottom: 1px;
+
+    .legend-text-left {
+      float: left;
+      margin-top: -5px;
+      padding-left: 20px;
+    }
+    .legend-text-right {
+      float: right;
+      margin-top: -5px;
+      padding-right: 10px;
+    }
+  }
+  .green-border-top {
+    border-top: 1px solid rgb(22,159,132);
+  }
+
+  .green.activated {
+    background-color: rgb(22,159,132);
+    color: white;
+  }
+
+  .green.segment-button.segment-activated {
+    background-color: rgb(22,159,132);
+    border-color: rgb(22,159,132);
+    color: white;
+  }
+
+  .green.segment-button:hover:not(.segment-activated) {
+    background-color: rgba(22,159,132,0.1);
+  }
+
+  .green.segment-button {
+    border-color: rgb(22,159,132);
+    color: black;
+  }
+
+  .green.segment-button.activated {
+    border-color: rgb(22,159,132);
+  }
+}

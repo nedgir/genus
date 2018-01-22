@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar class ="myNavBar" [hideBackButton]="true">
+      <img src="assets/icon/logoCircle.png">
+    <div>Create your account</div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class ="thisContent">
+  <div class="login-form">
+    <ion-input type="text" placeholder="First Name" [(ngModel)]="firstname" (keypress)="validateFirstName()" (keydown)="validateFirstName()" (keyup)="validateFirstName()"></ion-input>
+    <ion-input type="text" placeholder="Last Name" [(ngModel)]="lastname" (keypress)="validateLastName()" (keydown)="validateLastName()" (keyup)="validateLastName()"></ion-input>
+    <ion-input type="email" placeholder="Email" [(ngModel)]="email" autocapitalize="off" (keypress)="validateEmail()" (keydown)="validateEmail()" (keyup)="validateEmail()"></ion-input>
+    <ion-input type="password" placeholder="Password" [(ngModel)]="password" (keypress)="validatePassword()" (keydown)="validatePassword()" (keypress)="validatePassword()" (keyup)="validatePassword()"></ion-input>
+    <ion-item class="thisChecklist password-example-text" no-lines>
+      <h3>( Password Example: Ford123! )</h3>
+    </ion-item>
+    <ion-item class="thisChecklist" no-lines>
+      <h4> Password Must contain: </h4>
+    </ion-item>
+    <ion-item class="thisChecklist" no-lines>
+      <h4>At least 8 characters</h4>
+      <ion-icon item-end [name]="password.length >= 8 ? 'checkbox':'square'" isActive = "false" color ="light"></ion-icon>
+    </ion-item>
+    <ion-item class="thisChecklist" no-lines>
+      <h4>One Number (1234..)</h4>
+      <ion-icon item-end [name]="hasNumber ? 'checkbox':'square'" isActive = "false" color ="light"></ion-icon>
+    </ion-item>
+    <ion-item class="thisChecklist" no-lines>
+      <h4> One Special Character (@#$%..) </h4>
+      <ion-icon item-end [name]="hasSpecial ? 'checkbox':'square'" isActive = "false" color ="light"></ion-icon>
+    </ion-item>
+    <ion-item class="thisChecklist" no-lines>
+      <h4> One Capital Character (ABCD..) </h4>
+      <ion-icon item-end [name]="hasCapital ? 'checkbox':'square'" isActive = "false" color ="light"></ion-icon>
+    </ion-item>
+    <ion-item class="thisChecklist" no-lines>
+      <h4> One Lowercase Character (abcd..) </h4>
+      <ion-icon item-end [name]="hasLower ? 'checkbox':'square'" isActive = "false" color ="light"></ion-icon>
+    </ion-item>
+    <button ion-button block class = "buttons" [disabled]="!validFirstName || !validLastName || !validEmail || !validPassword" (click)="register()">Register</button>
+  </div>
+</ion-content>
+<ion-footer text-left class ="thisFooter">
+  <button class="previous-button" ion-button icon-start (click) = "Back()">
+    <img class="chevron-left" src="assets/ChevronLeft.svg">
+    Previous
+  </button>
+</ion-footer>

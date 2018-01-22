@@ -1,0 +1,47 @@
+<ion-header>
+  <global-header page="DASHBOARD" dashboard="true" event="true"></global-header>
+</ion-header>
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list-header class="module-header community" tappable (click)="navToPage('CommunityMenuPage')">
+    <img src="assets/Community.svg">
+    <span>COMMUNITY</span>
+  </ion-list-header>
+  <ion-grid>
+    <ion-row class="group-section" text-center>
+      <ion-col col-6 class="cell-border-bottom cell-border-right" tappable (click)="haveEvents && navToPage('ContactHistoryPage')">
+        <dashboard-stats-cell [data]="community_last_contact"></dashboard-stats-cell>
+      </ion-col>
+      <ion-col col-6 *ngIf="openInvitations" tappable class="cell-border-bottom" (click)="navToPage('OpenInvitationsPage')">
+        <dashboard-stats-cell [data]="community_open_invitations"></dashboard-stats-cell>
+      </ion-col>
+      <ion-col col-3 *ngFor="let page of community_pages" [ngClass]="{'cell-border-bottom': !openInvitations}" tappable (click)="navToPage(page.component)">
+        <div class="padding-5"><b>{{page.title}}</b></div>
+        <img [src]="page.image" style="width:50px; height:50px;">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list-header class="module-header moments" tappable (click)="haveMoments && navToPage('MomentsPage')">
+    <img src="assets/camera_new.svg">
+    <span>MOMENTS</span>
+  </ion-list-header>
+  <ion-grid>
+    <ion-row class="group-section" text-center>
+      <ion-col col-6 class="cell-border-right">
+        <dashboard-stats-cell [data]="this.moments_last_photo"  tappable (click)="haveMoments && navToPage('MomentsPage')"></dashboard-stats-cell>
+      </ion-col>
+      <ion-col col-6>
+        <dashboard-stats-cell [data]="moments_photos"  tappable (click)="haveMoments && navToPage('MomentsPage')"></dashboard-stats-cell>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list-header *ngFor="let module of resources_module" [ngStyle]="{'background-color': module.color }" class="module-header" tappable (click)="navToPage('ResourcesPage', module)">
+    <img src="assets/Resources.svg">
+    <span>{{module.name.toUpperCase()}}</span>
+  </ion-list-header>
+</ion-content>
+<ion-footer>
+  <global-tab name="dashboard"></global-tab>
+</ion-footer>

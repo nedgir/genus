@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Contacts</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="back()">
+        Back
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (click)="submit()">
+        Submit
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-searchbar (ionInput)="search($event)"></ion-searchbar>
+</ion-header>
+<ion-content>
+    <ion-list *ngFor="let contact of contacts">
+      <ion-item>
+        <ion-label>{{contact.name}}</ion-label>
+        <ion-checkbox item-right [(ngModel)]="contact.checked"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+</ion-content>

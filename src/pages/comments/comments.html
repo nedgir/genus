@@ -1,0 +1,25 @@
+<ion-header>
+  <global-header page="COMMENTS" group="community" [pop]="true"></global-header>
+</ion-header>
+<ion-content #content class="community-content">
+  <ion-list no-lines class="chat-list">
+    <ion-item class="chat-msg" *ngFor="let msg of msgs">
+      <ion-avatar item-start class="profile-image">
+        <img [src]="getMemberIcon(msg.from)">
+      </ion-avatar>
+      <ng-container [ngSwitch]="msg.flags">
+        <div *ngSwitchCase="0" class="chat-date">{{msg.fromName}} - {{msg.sentDate | date:'MMM d, y, h:mm a'}}</div>
+        <chat-bubble *ngSwitchCase="0" class="chat-message" [message]="msg" [user]="null" [showName]="false"></chat-bubble>
+        <div *ngSwitchCase="1" class="chat-date">{{msg.fromName}} liked this post - {{msg.sentDate | date:'MMM d, y, h:mm a'}}</div>
+      </ng-container>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar position="bottom">
+    <div>
+      <ion-input class="chat-input" type="text" placeholder="Type a message..." [(ngModel)]="myComment" (keypress)="eventHandler($event.keyCode)"
+        (keydown)="eventHandler($event.keyCode)" (keyup)="eventHandler($event.keyCode)"></ion-input>
+    </div>
+  </ion-toolbar>
+</ion-footer>

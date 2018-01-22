@@ -1,0 +1,22 @@
+<ion-header>
+  <global-header page="REPORT A BUG" group="other"></global-header>
+</ion-header>
+<ion-content class="background-gray" padding-0>
+  <ion-list class="border">
+    <ion-item-divider class="background-gray"></ion-item-divider>
+    <ion-item text-wrap class="border">
+      <ion-textarea [(ngModel)]="bug" placeholder="Enter your bug here..."></ion-textarea>
+    </ion-item>
+    <ion-item class="border">
+      <ion-label>Would you like to hear back?</ion-label>
+      <ion-toggle [(ngModel)]="hearBack" color="secondary"></ion-toggle>
+    </ion-item>
+    <ion-item-divider class="background-gray"></ion-item-divider>
+    <button ion-item [disabled]="!bug.length" (click)="save()">
+      <ion-label color="primary" text-center> Save </ion-label>
+    </button>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <global-tab name="report-bug"></global-tab>
+</ion-footer>

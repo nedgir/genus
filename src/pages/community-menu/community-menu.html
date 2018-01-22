@@ -1,0 +1,19 @@
+<ion-header>
+  <global-header page="COMMUNITY" group="community"></global-header>
+</ion-header>
+
+
+<ion-content class="community-content">
+  <ion-list>
+    <div *ngFor="let page of pages">
+      <button *ngIf="showHidePage(page)" ion-item (click)="navToPage(page)">
+        <img class="background-none" width="30" height="30" src="{{page.image}}"/>
+        <span class="page-option">{{ page.title }}</span>
+      </button>
+    </div>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <global-tab name="community-menu"></global-tab>
+</ion-footer>

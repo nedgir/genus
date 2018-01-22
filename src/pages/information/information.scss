@@ -1,0 +1,30 @@
+page-information {
+  .content {
+    background-color: #f4f4f4;
+  }
+  ion-input {
+    padding-right: 5px;
+  }
+  .update {
+    border-radius: 0px;
+    background: white;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    color: #488aff;
+  }
+  .btn-a {
+    margin-bottom: 32px;
+  }
+  .button {
+    transition: 0.1s;
+  }
+  .button.activated {
+    background-color: lightgray;
+  }
+  .fix-padding-left {
+    padding-left: 0px !important;
+    span {
+      margin-left: 8px;
+    }
+  }
+}

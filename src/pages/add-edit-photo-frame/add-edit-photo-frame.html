@@ -1,0 +1,23 @@
+<ion-header>
+  <global-header page="ADD/EDIT PHOTO FRAME" group="moments" [pop]="true"></global-header>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-input class="input-entry" type="text" placeholder="Name" [(ngModel)]="frame.name" (keypress)="validateName()" (keydown)="validateName()" (keyup)="validateName()"></ion-input>
+    <ion-input class="input-entry" type="email" placeholder="email address" [(ngModel)]="frame.email" autocapitalize="off" (keypress)="validateEmail()" (keydown)="validateEmail()" (keyup)="validateEmail()"></ion-input>
+  </ion-list>
+  <button ion-button block class="save-button" [disabled]="!validName || !validEmail" (click)="save()">Save</button>
+  <div *ngIf="photosInFrame.length" class="photo-in-frame">Photos in frame</div>
+  <ng-container *ngFor="let photo of photosInFrame">
+    <div class="image-container">
+      <img [src]="photo.picture">
+      <div class="image-description">
+        <p>{{photo.title}}</p>
+        <p>Added by {{photo.addedBy}} - {{photo.addedDate | date:'M/d/yy, h:mm a'}}</p>
+      </div>
+    </div>
+  </ng-container>
+</ion-content>
+<ion-footer>
+  <global-tab></global-tab>
+</ion-footer>

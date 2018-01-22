@@ -1,0 +1,40 @@
+<div class="content-top">
+  <div class="chart-segment">
+    <ion-segment [(ngModel)]="chartType" (ionChange)="switchChartType()">
+      <ion-segment-button class="green" value="weekly">
+        Week
+      </ion-segment-button>
+      <ion-segment-button class="green" value="monthly">
+        Month
+      </ion-segment-button>
+      <ion-segment-button class="green" value="yearly">
+        Year
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div class="chart-container">
+    <canvas #chartCanvas> </canvas>
+    <div class="legend-text">
+      <span class="legend-text-left">{{leftLegendText}}</span>
+      <span class="legend-text-right">{{rightLegendText}}</span>
+    </div>
+    <div class="chart-legend-item-container">
+      <div class="chart-legend-item">
+        <img src="assets/Visit.svg"/>
+        <canvas style="background-color: #169F84;" class="chart-legend-color-strip"></canvas>
+      </div>
+      <div class="chart-legend-item">
+        <img src="assets/phoneCallConnected.svg"/>
+        <canvas style="background-color: #5A5A5A;" class="chart-legend-color-strip"></canvas>
+      </div>
+      <div class="chart-legend-item">
+        <img src="assets/phoneCallMissed.svg"/>
+        <canvas style="background-color: rgb(255, 221, 0);" class="chart-legend-color-strip"></canvas>
+      </div>
+      <div class="chart-legend-item">
+        <img src="assets/Emergency.svg"/>
+        <canvas style="background-color: red;" class="chart-legend-color-strip"></canvas>
+      </div>
+    </div>
+  </div>
+</div>

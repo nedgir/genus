@@ -1,0 +1,29 @@
+dashboard-stats-cell {
+
+  .cell-title {
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 0px;
+  }
+
+  ion-col {
+    display:flex;
+    flex-direction: column;
+
+    ion-row:nth-child(1) {
+      flex-grow: 1;
+
+      ion-col {
+        justify-content: center;
+      }
+    }
+
+    ion-row:nth-child(2) {
+      flex-grow: 4;
+    }
+  }
+
+  sub {
+    font-size: 0.5em;
+  }
+}

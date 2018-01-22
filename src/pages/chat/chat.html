@@ -1,0 +1,22 @@
+<ion-header>
+  <global-header page="CHAT" group="community"></global-header>
+</ion-header>
+<ion-content class="community-content">
+  <ion-list no-lines class="chat-list">
+    <ion-item class="chat-msg" *ngFor="let msg of msgs; let i = index" [ngClass]="getMsgClass(msg)">
+      <ng-container *ngIf="shouldShowDate(i, msgs[i-1], msgs[i])">
+        <div class="chat-date">{{msg.sentDate | date:'mediumDate'}}</div>
+      </ng-container>
+      <chat-bubble [showName]="shouldShowName(i, msgs[i-1], msgs[i])" [message]="msg" [user]="usr"></chat-bubble>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar position="bottom">
+    <div class="input-div">
+      <ion-input class="chat-input" type="text" placeholder="Type a message..." [(ngModel)]="msg"></ion-input>
+      <button ion-button tappable clear class="send-button" *ngIf="msg.length" (click)="send()">Send</button>
+    </div>
+  </ion-toolbar>
+  <global-tab></global-tab>
+</ion-footer>

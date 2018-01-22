@@ -1,0 +1,17 @@
+page-emergency-history {
+  .no-scroll{
+    .scroll-content{
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+    .content-scroll{
+      height: 100%;
+      .scroll-content{
+        overflow-y: scroll;
+      }
+    }
+  }
+  .content-parent{
+    height: 100%;
+  }
+}

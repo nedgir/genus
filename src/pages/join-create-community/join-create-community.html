@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar class ="myNavBar" hideBackButton=true>
+    <img src="assets/icon/logoCircle.png">
+    <div>Join or Create Community</div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class ="thisContent">
+  <div class="login-form">
+    <ion-input type="text" placeholder="First Name" [(ngModel)]="firstName" (keypress)="validate()"
+        (keydown)="validate()" (keyup)="validate()"></ion-input>
+    <ion-input type="text" placeholder="Last Name" [(ngModel)]="lastName" (keypress)="validate()"
+        (keydown)="validate()" (keyup)="validate()"></ion-input>
+    <button ion-button block class = "buttons" id ="createBtn" disabled="false" (click)="createCommunity()">Create Community</button>
+    <ion-label>Or, if you received an invite to help <br /> someone else, enter it below.</ion-label>
+    <ion-input type="tel" maxlength="7" placeholder="Invite Code" [(ngModel)]="code" (focusout)="formatCode()" (focusin)="formatCode()" (keypress)="formatCode()"
+        (keydown)="formatCode()" (keyup)="formatCode()"></ion-input>
+    <button ion-button block class = "buttons" id ="codeBtn" disabled="disabled" (click)="joinCommunity()">Use Code</button>
+    <ion-item-divider></ion-item-divider>
+    <button ion-button block class = "buttons" (click) = "cancel()">Cancel</button>
+  </div>
+</ion-content>

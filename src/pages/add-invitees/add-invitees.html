@@ -1,0 +1,21 @@
+<ion-header>
+  <global-header page="ADD INVITEES" group="community" [pop]="true"></global-header>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ng-container *ngFor="let person of peopleArray">
+      <ion-item *ngIf="!person.status">
+        <ion-label>{{person.name}}</ion-label>
+        <ion-checkbox (ionChange)="toggleSelected(person)"></ion-checkbox>
+      </ion-item>
+    </ng-container>
+    <ion-item>
+      <ion-label color="primary" class="save" (click)="save()">Save</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <global-tab></global-tab>
+</ion-footer>

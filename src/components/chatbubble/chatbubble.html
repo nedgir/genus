@@ -1,0 +1,12 @@
+<div>
+  <ng-container *ngIf="msg.fromName!=usr && showName">
+    <div class="chat-bubble-sender">{{msg.fromName}}</div>
+  </ng-container>
+  <div [ngClass]="msg.fromName==usr ? 'chat-div-right' : 'chat-div-left'">
+    <span class="chatBubble">
+      <div class="chat-bubble" [ngClass]="msg.fromName==usr ? 'right' : 'left'">
+        <span class="message">{{msg.message}}</span>
+      </div>
+    </span>
+  </div>
+</div>

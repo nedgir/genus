@@ -1,0 +1,15 @@
+<ion-header>
+  <global-header page="PHOTO FRAMES" group="moments" [pop]="true"></global-header>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item detail-push *ngFor="let frame of frames" (click)="editFrame(frame)">
+      <img item-start class="background-none" style="width:27px; height:27px;" src="assets/FameIcon.svg" />
+      {{frame.name}}
+    </ion-item>
+    <ion-item (click)="addFrame()">Add Frame</ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <global-tab></global-tab>
+</ion-footer>

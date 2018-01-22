@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list *ngIf="!iframe">
+    <ion-item *ngFor="let item of displayList" detail-push (click)="navToPage(item)">{{displayItemName(item)}}</ion-item>
+    <ion-item *ngIf="displayList?.length === 0"> No Articles Found </ion-item>
+  </ion-list>
+</ion-content>

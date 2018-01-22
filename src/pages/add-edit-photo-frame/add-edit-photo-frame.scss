@@ -1,0 +1,76 @@
+page-add-edit-photo-frame {
+  font-family: 'Montserrat-Regular';
+  font-size: 1.2em;
+
+  input {
+    text-align: center;
+  }
+
+  .photo-in-frame {
+    background-color: #E6E6E6;
+    padding-left: 20px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 2em;
+    font-weight: bold;
+  }
+
+  .image-container {
+    position: relative;
+
+    img {
+      display: block;
+    }
+
+    .image-description {
+      position: absolute;
+      bottom: 0;
+      background-color: black;
+      width: 100%;
+      color: white;
+      opacity: 0.8;
+      padding-left: 1em;
+      height: 4em;
+      font-size: 14px;
+
+      p {
+        margin: 0.5em 0;
+      }
+    }
+  }
+
+  .input-entry {
+    border: 1px solid #E6E6E6;
+    width: 90%;
+    margin: 10px 20px;
+    border-radius: 5px;
+  }
+
+  .save-button {
+    border: 2px solid #8C8C8C;
+    background-color: white;
+    color: #5A5A5A;
+    border-radius: 7px;
+    height: 35px;
+    margin: 10px 20px;
+    width: 90%;
+  }
+
+  ::-webkit-input-placeholder {
+    text-align: center;
+  }
+
+  :-moz-placeholder {
+    /* Firefox 18- */
+    text-align: center;
+  }
+
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    text-align: center;
+  }
+
+  :-ms-input-placeholder {
+    text-align: center;
+  }
+}

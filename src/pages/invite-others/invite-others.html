@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar class ="myNavBar" hideBackButton=true>
+    <img src="assets/icon/logoCircle.png">
+    <div>Invite someone to your circle</div>
+  </ion-navbar>
+</ion-header>
+<ion-content class ="thisContent">
+  <div class="login-form">
+    <ion-label>Rally family and friends around<br/> the community centered on <br/>{{communityName}}.</ion-label>
+    <button ion-button block class = "buttons" (click)="sendInvites()">Send Invites</button>
+    <ion-item-divider></ion-item-divider>
+    <button ion-button block class = "buttons" (click)="cancel()">Cancel</button>
+  </div>
+</ion-content>

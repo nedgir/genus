@@ -1,0 +1,158 @@
+global-header {
+  font-family: 'Montserrat-Regular';
+  .toolbar-wp, .toolbar-md {
+    padding: 0;
+    min-height: 45px;
+  }
+  .content-md {
+    margin-top: 90px;
+  }
+
+  ion-navbar {
+    .toolbar-content-wp, .toolbar-content-md {
+      display: inline-table;
+      width: 100vw;
+    .toolbar-title-wp {
+      padding: 8px 0px;
+    }
+    .toolbar-title-md {
+      padding: 8px 0px;
+    }
+  }
+  .chevron-left {
+    position: absolute;
+    left: 0;
+  }
+    .bar-button-default-ios {
+      color: white;
+    }
+
+    .toolbar-title-ios,.toolbar-title-md, .toolbar-title-wp {
+      text-align: left;
+      font-size: 18pt;
+      font-weight: normal;
+      color: white;
+    }
+  }
+
+  .info-title {
+    padding: 0 30px 1px;
+    font-size: 23px;
+    font-family: 'Montserrat-Regular';
+    .toolbar-title {
+      color: white;
+    }
+  }
+
+  .back-button-icon-ios {
+    font-size: 3.0rem;
+  }
+
+  .community-color {
+    background-color: #169F84;
+  }
+
+  .health-color {
+    background-color: #FC625E;
+  }
+
+  .moments-color {
+    background-color: #355C7D;
+  }
+
+  .resources-color {
+    background-color: #008CA5;
+  }
+  .other-color {
+    background-color: #8C8C8C;
+  }
+  .header-back-button {
+    width: 50vw;
+    color: white;
+    ion-icon {
+      position: absolute;
+      left: 8px;
+    }
+  }
+  .header-buttons {
+    .bar-buttons-wp, .bar-buttons-md {
+      position: absolute;
+      top: 7px; /* Firefox */
+      color: white;
+    }
+  }
+
+  .community-image{
+    width: 27px;
+    height: 27px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+  }
+
+  .community-name{
+    color: #5A5A5A;
+  }
+
+  .global-header-image {
+    width: 27px;
+    height: 27px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    position: relative;
+    top: 2px;
+  }
+
+  .global-header-name {
+    position: relative;
+    color: #5A5A5A;
+    bottom: 4px;
+  }
+
+  .community-drop-down {
+
+    background-color: #E6E6E6;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    max-height: 75vh;
+    overflow-y: scroll;
+
+    .community-menu {
+      text-align: center;
+      background-color: #E6E6E6;
+      color: #5A5A5A;
+      text-transform: none;
+      margin: 0px;
+      font-size: 20px;
+      font-weight: 500;
+
+      img + span {
+        margin-left: 5px;
+      }
+    }
+
+    .popover-wrapper{
+      width: 85%;
+    }
+    .community-image{
+      width: 27px;
+      height: 27px;
+      border: 1px solid lightgray;
+      border-radius: 50%;
+    }
+
+      // .popover-content {
+      //   width: 100% !important;
+      //   top: 44px !important;
+      //   left: 0px !important;
+      //   background-color: #E6E6E6 !important;
+      //   box-shadow: none !important;
+      // }
+      // .popover-arrow, .popover-arrow:after{
+      //   background-color: #E6E6E6 !important;
+      // }
+      ion-spinner {
+        width: 100%;
+      }
+    }
+}

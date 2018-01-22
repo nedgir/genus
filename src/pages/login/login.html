@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar class="myNavBar">
+    <img src="assets/icon/logoCircle.png">
+    <div>Welcome to genusConnect<sup>TM</sup></div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content">
+  <div class="login-form">
+    <ion-item>
+      <ion-input type="text" placeholder="Email" [(ngModel)]="email" autocomplete="on" autocapitalize="off" (keypress)="btnActiv()" (keydown)="btnActiv()" (keyup)="btnActiv()"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [type]=" showPassword ? 'text' : 'password' " placeholder="Password" [(ngModel)]="password" clearOnEdit="false" (keypress)="btnActiv()" (keydown)="btnActiv()" (keyup)="btnActiv()"></ion-input>
+      <button *ngIf="password.length" class="show-password-eye" ion-button clear color="dark" item-right (click)="showPassword = !showPassword">
+        <ion-icon [name]=" showPassword ? 'eye-off' : 'eye' "></ion-icon>
+      </button>
+    </ion-item>
+    <button ion-button block (click)="Login()" class="buttons" id="myBtn" disabled="disabled">Login</button>
+    <div class="horizontal-line">
+      <span class="text-or">
+        or
+      </span>
+    </div>
+    <button ion-button block (click)="Register()" class="buttons margin-top-30">Register</button>
+    <button ion-button block (click)="Recover()" class="buttons">Recover Password</button>
+  </div>
+</ion-content>

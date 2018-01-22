@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar class="myNavBar">
+    <!-- TO DO: CHANGE THE IMAGE DYNAMICALLY -->
+    <img src="assets/icon/logoCircle.png">
+    <div>Verify your account</div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="thisContent">
+  <div class="login-form">
+    <ion-label>Your {{resource}} code was sent to {{attributeValue}}.</ion-label>
+    <ion-input type="number" placeholder="Code" [(ngModel)]="verificationCode" (keyup)="showConfirmButton()"></ion-input>
+    <button ion-button block class="buttons" (click)="confirm()" [disabled]="confirmButtonDisabled">Confirm</button>
+
+    <div class="strike">
+      <span class="task-group-font">
+          <ion-label>or</ion-label>
+        </span>
+    </div>
+
+    <button ion-button block class="buttons" (click)="sendVerificationCode()">Resend Confirmation Code</button>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="thisFooter" position="bottom">
+    <ion-buttons start (click)="Back()">
+      <button ion-button icon-left>
+          <ion-icon name="arrow-back" color= "light"></ion-icon>
+          <p>Previous</p>
+        </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,43 @@
+<ion-scroll #scroll class="content-scroll green-border-top" scrollY="true">
+  <ion-list>
+    <ion-item-group #dt *ngFor="let group of eventGroups" id={{group.id}}>
+      <ion-item-divider sticky color="light" class="item-divider">{{group.displayDate}}</ion-item-divider>
+      <ion-item detail-push *ngFor="let event of group.events" [ngClass]="getAssistClass(event)" (click)="openPage(event)">
+        <p class="list-title">{{getTitle(event)}}</p>
+        <p class="list-subtitle">{{event.startDate | date: 'h:mm a'}} {{getEventReporter(event)}}</p>
+        <div class="width-99">
+          <div class="{{ displayWidth(showObservation(event)) }} inline-block">
+            <div class="inline-block text-center width-50">
+              <img class="background-none" style="width:27px; height:27px;" src="{{getEventCallIcon(event)}}" />
+              <p class="list-icon-title">{{getEventDuration(event)}}</p>
+            </div>
+            <div class="inline-block text-center width-50">
+              <img class="background-none" style="width:27px; height:27px;" src="assets/RSVP.svg" />
+              <p class="list-icon-title">{{getPeopleCount(event)}}</p>
+            </div>
+          </div>
+          <div *ngIf="showObservation(event)" class="width-33 inline-block list-row-divider">
+            <div class="inline-block text-center width-50">
+              <img class="background-none" style="width:27px; height:27px;" src="{{event.Emotional}}" />
+              <p class="list-icon-title">EMO</p>
+            </div>
+            <div class="inline-block text-center width-50">
+              <img class="background-none" style="width:27px; height:27px;" src="{{event.Physical}}" />
+              <p class="list-icon-title">PHY</p>
+            </div>
+          </div>
+          <div class="{{ displayWidth(showObservation(event)) }} inline-block list-row-divider">
+            <div class="inline-block text-center width-50">
+              <img class="background-none" style="width:27px; height:27px;" src="assets/Comments.svg" (click)="openCommentsPage(event);$event.stopPropagation();"/>
+              <p class="list-icon-title">{{event.commentsNum}}</p>
+            </div>
+            <div class="inline-block text-center width-50">
+              <img class="background-none" style="width:27px; height:27px;" src="{{getLikesSvg(event.clickedLike)}}" (click)="toggleLike(event);$event.stopPropagation();"/>
+              <p class="list-icon-title">{{event.likesNum}}</p>
+            </div>
+          </div>
+        </div>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+</ion-scroll>

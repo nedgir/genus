@@ -1,0 +1,49 @@
+page-chat {
+  .item-md.item-block .item-inner {
+    padding-right: 0;
+  }
+  .item-block {
+    min-height: 0;
+  }
+  .chat-list {
+    margin-top:10px;
+  }
+  .chat-msg .label-ios, .chat-msg .label-md, .chat-msg .label-wp {
+    margin:0;
+  }
+  .chat-date {
+    margin-top: 2px;
+    font-size: 0.7em;
+    color: gray;
+    text-align: center;
+  }
+  .item-ios, .item-md, .item-wp {
+    padding-left:0px;
+  }
+  .current-user {
+    margin-left:6px;
+    .chat-date {
+      margin-left:-8px;
+    }
+  }
+  .chat-input {
+    border: 1px solid lightgray;
+    padding: 0px 0px 2px 10px;
+    background: white;
+    transition: 0.75s;
+    display: inline-block;
+    transition: 0.5s;
+    border-radius: 6px;
+  }
+
+  .input-div {
+    display: inline-flex;
+    width: 100%;
+  }
+
+  .send-button {
+    padding: 0 8px;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+}

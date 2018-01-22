@@ -1,0 +1,257 @@
+.green {
+  background-color: rgb(22,159,132);
+  color: white;
+}
+
+.red {
+  background-color: #FC625E;
+  color: white;
+}
+
+.green-2 {
+  background-color: #5BBBA8;
+  color: white;
+}
+
+.red-2 {
+  background-color: #FC908D;
+  color: white;
+}
+
+.red-text {
+  color: red !important;
+}
+
+.background-none{
+  background: none;
+}
+
+.inline-block{
+  display: inline-block;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.padding-left-0 {
+  padding-left: 0px;
+}
+
+.padding-left-10{
+  padding-left: 10px;
+}
+
+.padding-right-10{
+  padding-right: 10px;
+}
+
+.padding-bottom-2{
+  padding-bottom: 2px;
+}
+
+.width-33{
+  width: 33%;
+}
+
+.width-50{
+  width: 50%;
+}
+
+.width-99{
+  width: 99%;
+}
+
+.list-row-divider{
+  border-left: 1px solid lightgray;
+}
+//Page Header Button
+.header-button {
+  margin: 0px;
+  height: 30px;
+  font-weight: 500;
+  > span {
+    justify-content: flex-start;
+  }
+}
+//Chart-segment-style
+.chart-segment{
+  padding: 8px 20px 8px 20px;
+}
+
+.segment-button{
+  height: 2.2rem!important;
+  line-height: 2.2rem!important;
+}
+
+//List Style
+.item-divider{
+  height: 21px !important;
+  font-size: 13px;
+  min-height: 0px;
+  > div > div > .label {
+    color: rgb(90,90,90)!important;
+    font-weight: bold;
+    margin: 0px!important;
+    margin-top: 1px!important;
+  }
+}
+
+.list-button{
+  padding-top: 1px!important;
+  padding-left: 7px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid lightgray;
+  > div > div > .label {
+    margin: 0px;
+  }
+}
+
+.list-title{
+  font-size: 12px!important;
+  font-weight: bold;
+  color: rgb(90,90,90)!important;
+}
+
+.list-subtitle{
+  font-size: 11px!important;
+  color: rgb(140,140,140)!important;
+}
+
+.list-icon-title{
+  font-size: 10px!important;
+}
+//Page Header Button
+.header-button {
+  margin: 0px;
+  height: 40px;
+  font-weight: 500;
+  font-size: 1.4em;
+  > span {
+    justify-content: flex-start;
+  }
+}
+//Android style
+.focus-outline :focus {
+  outline-style: none;
+}
+
+.header-md::after {
+  background-image: none;
+}
+.button-md {
+  box-shadow: none;
+}
+
+.action-sheet-md {
+  .action-sheet-title {
+    font-weight: bold;
+  }
+  .action-sheet-sub-title {
+    padding-left: 16px;
+    color: gray;
+  }
+}
+
+.action-sheet-ios {
+  .action-sheet-title {
+    border-bottom: 0px;
+    padding-bottom: 10px;
+    font-weight: bold;
+  }
+  .action-sheet-sub-title {
+    border-bottom: 0.55px solid #d6d6da;
+    color: gray;
+    text-align: center;
+    padding: 0 30px 20px 30px;
+  }
+}
+
+//Colored borders
+.community-content {
+  border-left: 1px solid #169F84;
+  border-right: 1px solid #169F84;
+}
+.health-content {
+  border-left: 1px solid #FC625E;
+  border-right: 1px solid #FC625E;
+}
+.moments-content {
+  border-left: 1px solid #355C7D;
+  border-right: 1px solid #355C7D;
+}
+.resources-content {
+  border-left: 1px solid #008CA5;
+  border-right: 1px solid #008CA5;
+}
+::-webkit-scrollbar{
+  display:none;
+}
+ion-content {
+  overflow: -moz-scrollbars-none;
+  .scroll-content {
+    overflow-y: scroll;
+    @-moz-document url-prefix() {
+      margin-right: -16px;
+    }
+  }
+}
+
+.custom-popover {
+  ion-backdrop {
+    opacity: 0!important;
+  }
+}
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+.list-md .item-block .item-inner
+{
+  border-bottom-color: transparent;
+  box-shadow: inset 0 -1px 0 0 transparent;
+}
+.change-image-actions {
+  .action-sheet-title {
+    text-align: center;
+  }
+}
+.confirm-update-actions {
+  .alert-head {
+    text-align: center;
+  }
+  .button-inner {
+    -webkit-justify-content: center!important;
+        -ms-flex-pack: center;
+    justify-content: center!important;
+  }
+  .btn-no span {
+    color: red;
+  }
+}
+
+.momentsPage-delete-photo-alert-delete-button {
+  color: red !important;
+}
+
+ion-footer {
+  background-color: #E6E6E6;
+
+  ion-col {
+    padding-top: 0px !important;
+  }
+}
+
+.menu-footer {
+  div {
+    padding: 5px 0px;
+  }
+}
+
+// @media only screen and (min-width: 769px) {
+//   body {
+//     background: #EFEFEF;
+//     border: 1px solid #5A5A5A;
+//     position: relative;
+//     width: 375px;
+//     height: 667px;
+//     margin: 0 auto;
+//   }
+// }

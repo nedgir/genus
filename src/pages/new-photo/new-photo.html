@@ -1,0 +1,13 @@
+<ion-header>
+  <global-header page="NEW PHOTO" group="moments"></global-header>
+</ion-header>
+<ion-content>
+  <div text-center>
+      <img [src]="'data:image/jpeg;base64,' + croppedPhotoImageData" width="100%" height="275"/>
+      <ion-input class="input-caption" type="text" placeholder="add a caption..." [(ngModel)]="caption"></ion-input>
+      <button ion-button block class="save-button" (click)="save()">Save</button>
+  </div>
+</ion-content>
+<ion-footer>
+  <global-tab></global-tab>
+</ion-footer>

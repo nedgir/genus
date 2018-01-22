@@ -1,0 +1,23 @@
+<ion-header>
+  <global-header page="CONTACT HISTORY" group="community" event="true"></global-header>
+</ion-header>
+<ion-content>
+  <ion-item *ngIf="haveEvents" ion-fixed text-wrap>
+    <chart></chart>
+  </ion-item>
+  <event-list-infinite *ngIf="haveEvents" [parentContent]="content" [descend]="true">
+  </event-list-infinite>
+  <div *ngIf="!haveEvents" ion-fixed class="no-event-section">
+    <div class="no-event-title">Use the + in the upper right to</div>
+    <ul class="no-event-message">
+      <li>Share visits and calls</li>
+      <li>Collect meaningful observations with each visit</li>
+    </ul>
+    <div text-center>
+      <img class="background-none" class="no-event-call-log" src="assets/calllog.svg" />
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <global-tab name="call"  isRoot="false"></global-tab>
+</ion-footer>

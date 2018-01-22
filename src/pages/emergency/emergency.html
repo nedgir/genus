@@ -1,0 +1,105 @@
+<ion-header>
+  <global-header page="EMERGENCY" group="other"></global-header>
+</ion-header>
+
+<ion-content>
+  <ion-row *ngIf="is_mobile" class="emergency">
+    <ion-col>
+      <p class="emergencytext">Emergency</p>
+      <p class="emergencytext">POC needs outside help now</p>
+    </ion-col>
+    <ion-col class="righttd">
+      <button class="emergencyBtn" (click)="emergency()">Dial emergency services</button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="border">
+    <ion-col>
+      <p>Urgent situation</p>
+      <p>POC needs help from the community</p>
+    </ion-col>
+    <ion-col class="righttd">
+      <button class="notifyBtn" (click)="notify()">Notify</button>
+    </ion-col>
+  </ion-row>
+  <ion-row  [navPush]="historyPage">
+    <ion-col>
+      <p>History</p>
+      <p>Review all past emergencies and urgent situations</p>
+    </ion-col>
+    <ion-col class="righttd">
+    </ion-col>
+  </ion-row>
+  <div class="login-form">
+    <!-- <pre>{{communityInformation | json}}</pre> -->
+    <br>
+    <h3> Key Information </h3>
+    <p class="notification-text">
+      <i>Data listed from the health module in this location is only available on the iOS version at this time.  Look for an updated Droid version coming soon!</i>
+    </p>
+    <h4><h2> First Name: </h2> {{communityInformation.firstName}}</h4>
+    <h4><h2> Last Name: </h2> {{communityInformation.lastName}}</h4>
+    <h4><h2> Phone: </h2>  {{communityInformation.phone}}</h4>
+    <h4><h2> Email: </h2> {{communityInformation.email}}</h4>
+    <h4><h2> Emergency Number: </h2> {{communityInformation.emergencyNumber}}</h4>
+    <!--
+      <h4><h2> Name: </h2> Steven Jones </h4>
+    <h4><h2> Birthdate: </h2> 4/20/39 </h4>
+    <h4><h2> Blood Type: </h2> A RhD negative (A-) </h4>
+    <br>
+    <h4 class="text-title"> Emergency Contact </h4>
+    <h4><h2> Name: </h2> Mary Smith </h4>
+    <h4><h2> Phone: </h2> (314) 222-0000 </h4>
+    <br>
+    <h4 class="text-title"> Emergency Contact </h4>
+    <h4><h2> Name: </h2> Robert Jones </h4>
+    <h4><h2> Phone: </h2> (555) 212-5555 </h4>
+    <br>
+    <h4 class="text-title"> Alergies </h4>
+    <h4> Penicillin </h4>
+    <h4> Soy </h4>
+    <br>
+    <h4 class="text-title"> Medication </h4>
+    <h4> Vasotec </h4>
+    <h4> Zyrtec </h4>
+    <h4> Flecanide </h4>
+    <br>
+    <h4 class="text-title"> Medical Devices </h4>
+    <h4> Insulin pump </h4>
+    <br>
+    <h4 class="text-title"> Medical Conditions </h4>
+    <h4> Atrial Fibrillation </h4>
+    <br>
+    <h4 class="text-title"> Family History </h4>
+    <h4> Colon Cancer(Father) </h4>
+    <br>
+    <h4 class="text-title"> Medical Documents </h4>
+    <h4><h2> Type: </h2> DNR </h4>
+    <h4><h2> Admin: </h2> Bob </h4>
+    <br>
+    <h4><h2> Type: </h2> Health care power of attorney </h4>
+    <h4><h2> Admin: </h2> Howard Jones </h4>
+    <br>
+    <h4 class="text-title"> Physicians </h4>
+    <h4><h2> Name:  </h2> Samual Decata </h4>
+    <h4><h2> Speciality: </h2> Family Practice </h4>
+    <h4><h2> Phone: </h2> (555) 696-8547 </h4>
+    <br>
+    <h4><h2> Name: </h2> Dennis Ramus </h4>
+    <h4><h2> Speciality: </h2> Family Practice </h4>
+    <h4><h2> Phone: </h2> (586) 123-4567 </h4>
+    <br>
+    <h4><h2> Name: </h2> Thomas Sutherland </h4>
+    <h4><h2> Speciality: </h2> Electrophysiology </h4>
+    <h4><h2> Phone: </h2> (555) 323-5656 </h4>
+    <br>
+    <h4 class="text-title"> Insurance Policies </h4>
+    <h4><h2> Company: </h2> Northwestern Mutial </h4>
+    <h4><h2> Type: </h2> Long-term care </h4>
+   -->
+    <br>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <global-tab name="emergency"></global-tab>
+</ion-footer>

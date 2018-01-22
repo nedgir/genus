@@ -1,0 +1,39 @@
+<ion-toolbar mode="ios">
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title mode="ios">
+    <a (click)="presentPopover($event)">
+      <img class="global-header-image" src={{getCommunityIcon()}}/>
+      <span class="global-header-name">{{getCommunityNickName()}}</span>
+    </a>
+  </ion-title>
+  <ion-buttons end>
+    <button ion-button (click)="openPage()" *ngIf="event">
+      <img class="background-none" style="width:27px; height:27px;" src="assets/PlusSign.svg"/>
+    </button>
+  </ion-buttons>
+</ion-toolbar>
+
+<div class="community-drop-down" *ngIf="buttonClicked">
+  <div *ngFor="let community of communities">
+    <a ion-button full class="community-menu" (click)="selectCommunity(community)">
+      <img class="community-image" src={{community.icon}}/>
+      <span class="community-name">{{community.name}} {{isCurrentCommunity(community)}}</span>
+    </a>
+  </div>
+  <div>
+    <button ion-button full class="community-menu" (click)="joinAddCommunity()">
+      Join / Add Community
+    </button>
+  </div>
+</div>
+
+<ion-navbar *ngIf="!dashboard" [hideBackButton]="true" class="header-buttons">
+  <ion-buttons start>
+    <button *ngIf="!root" ion-button tappable (click)="goBack()" class="header-back-button">
+    <img class="chevron-left" src="assets/ChevronLeft.svg">
+  </button>
+  </ion-buttons>
+  <ion-title class="info-title {{getGroupColor()}}" [ngStyle]="{'background-color': custom_module_color}">{{title}}</ion-title>
+</ion-navbar>

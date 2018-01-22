@@ -1,0 +1,24 @@
+<ion-header>
+  <global-header page="CALENDAR" group="community" event="true"></global-header>
+</ion-header>
+<ion-content class="no-scroll">
+  <div class="header-month-year">
+    <ion-img tappable class="chev-left" mwlCalendarPreviousView [(viewDate)]="date" (viewDateChange)="viewDateChange($event)" [view]="view" src="assets/ChevronLeftDouble.svg"></ion-img>
+    <span class="current-month inline-block padding-left-10 padding-right-10"> {{getThisMonth()}} {{date.getFullYear()}}</span>
+    <ion-img tappable class="chev-right" mwlCalendarNextView [(viewDate)]="date" (viewDateChange)="viewDateChange($event)" [view]="view" src="assets/ChevronRightDouble.svg"></ion-img>
+  </div>
+  <ng-template #headerTemp>
+		<div class="cal-cell-row day-header">
+			<div class="cal-cell cal-past columnHeader" *ngFor="let label of days_label">
+				 {{label}}
+			</div>
+		</div>
+	</ng-template>
+  <mwl-calendar-month-view [viewDate]="date" [headerTemplate]="headerTemp" [weekendDays]="weekendDays" [refresh]="refresh" (dayClicked)="dayClicked($event.day)" (beforeViewRender)="beforeMonthViewRender($event)" text-center>
+  </mwl-calendar-month-view>
+  <event-list listType="month" [ascend]="true" [calendarDate]="date">
+  </event-list>
+</ion-content>
+<ion-footer>
+  <global-tab></global-tab>
+</ion-footer>

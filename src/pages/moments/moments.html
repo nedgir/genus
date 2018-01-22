@@ -1,0 +1,70 @@
+<ng-container [ngSwitch]="checkOrientation(screenOrientation.type)">
+
+  <ng-container *ngSwitchCase="screenOrientation.ORIENTATIONS.LANDSCAPE">
+    <div class="swiper-no-swiping" tappable (click)="showPlayPause()">
+      <ion-slides *ngIf="albums.length" [initialSlide]="activeIndex" autoplay="4000" speed="500" loop="true" (ionSlideDidChange)="slideChanged()">
+        <ion-slide class="photo-slide-landscape" *ngFor="let item of albums">
+          <img src="{{item.picture}}"/>
+        </ion-slide>
+      </ion-slides>
+      <ion-icon class="play-pause-icon" [hidden]="hidePlayPauseButton" [name]="slidePlayState ? 'pause' : 'play' " (click)="playPauseSlideShow(); $event.stopPropagation()"></ion-icon>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchDefault>
+    <ion-header>
+      <global-header page="MOMENTS" group="moments" event="true"></global-header>
+    </ion-header>
+    <ion-content class="no-scroll">
+      <ng-container *ngIf="!momentsExist">
+        <div class="no-moment-title-message">
+          <div>
+            <div class="no-moment-title">Share moments.</div>
+            <div class="no-moment-message">Click the + to add photos with memories here so the community can see what {{communityNickname}} is up to!</div>
+          </div>
+        </div>
+        <div class="no-moment-image">
+          <img src="assets/FameIcon.svg"/>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="momentsExist">
+        <div>
+          <img class="delete-button" src="assets/trash.svg" (click)="presentDeletePhotoAlert()" />
+          <ion-slides *ngIf="albums.length" [initialSlide]="activeIndex" (ionSlideDidChange)="slideChanged()">
+            <ion-slide class="photo-slide" *ngFor="let item of albums">
+              <img src="{{item.picture}}" [hidden]="!item.loaded"/>
+              <ion-spinner *ngIf="!item.loaded"></ion-spinner>
+            </ion-slide>
+          </ion-slides>
+        </div>
+        <div class="caption">
+          <p class="image-title">{{albums[activeIndex]?.title}}</p>
+          <p class="image-index">{{activeIndex+1}} of {{albums.length}}</p>
+        </div>
+        <div class="button-container">
+          <div class="box" tappable [hidden]="!is_mobile" (click)="addPhoto()">
+            <div class="inner-box">
+              <div class="image-container">
+                <img src="assets/camera_old.svg" />
+              </div>
+              <div>add a photo</div>
+            </div>
+          </div>
+          <div class="box" tappable (click)="addToFrames()">
+            <div class="inner-box">
+              <div class="image-container">
+                <div *ngIf="numberFramesPresent" class="frame-number">{{numberFramesPresent}}</div>
+                <img src="assets/FameIcon.svg" />
+              </div>
+              <div>Add to frames</div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </ion-content>
+    <ion-footer>
+      <global-tab></global-tab>
+    </ion-footer>
+
+  </ng-container>
+</ng-container>

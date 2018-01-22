@@ -1,0 +1,61 @@
+page-invite-others {
+  text-align: center;
+  font-family:  'Montserrat-Regular';
+  font-size: 18px;
+  color: white;
+
+  .myNavBar {
+    height: 150px;
+
+    .toolbar-background {
+      background-color: rgb(70,121,130);
+    }
+
+    img {
+      width: 90px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .thisContent {
+    background-color: rgb(103,180,197);
+
+    .login-form {
+      margin: 20px 30px;
+    }
+
+    ion-label{
+      color:white;
+      text-align: center;
+      text-overflow: unset;
+    }
+
+    ion-input {
+      background: white;
+      border-radius: 5px;
+      height: 30px;
+      margin: 10px 0px;
+
+      input {
+        margin: 5px 10px;
+      }
+    }
+
+    .buttons {
+      border: 2px solid white;
+      background-color: rgb(70,121,130);
+      border-radius: 7px;
+      height: 35px;
+      margin: 10px 0px;
+      width: 100%;
+    }
+
+    ion-item-divider{
+      background-color: rgb(103,180,197);
+      height: 80px !important;
+      border-color: rgb(103,180,197);
+    }
+  }
+}

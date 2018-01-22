@@ -1,0 +1,86 @@
+page-dashboard {
+  font-family: 'Montserrat-Regular';
+  $border-color: #D3D3D3;
+  $click-active-color: #D9D9D9;
+
+  .scroll-content {
+    background-color: white;
+  }
+
+  .module-header {
+    height: 2.2em;
+    color: white;
+    font-size: 1.7em;
+    margin-bottom: 0px;
+
+    img {
+      vertical-align: middle;
+    }
+
+    span {
+      vertical-align: middle;
+    }
+  }
+
+  ion-row {
+    padding: 0px !important;
+  }
+
+  ion-col {
+    padding: 0px !important;
+  }
+
+  [col-3] {
+    border-right: 2px solid $border-color;
+  }
+
+  .cell-border-top {
+    border-top: 2px solid $border-color;
+  }
+
+  .cell-border-bottom {
+    border-bottom: 2px solid $border-color;
+  }
+
+  .cell-border-right {
+    border-right: 2px solid $border-color;
+  }
+
+  .padding-5 {
+    padding: 5px 0px;
+  }
+
+  .group-section {
+    text-align: center;
+    font-size: 12px;
+    color: black;
+
+    > ion-col {
+      height: 90px;
+    }
+
+    > ion-col:active {
+      background-color: $click-active-color;
+    }
+  }
+
+  .community {
+    background-color: rgb(22,159,132);
+  }
+
+  .moments {
+    background-color: #355C7D;
+  }
+
+  .resources {
+    background-color: #008CA5;
+  }
+
+  .grid {
+    padding: 0px;
+  }
+
+  .list-header-md {
+    border-top: 0px;
+  }
+}

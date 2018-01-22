@@ -1,0 +1,8 @@
+{
+  "name": "InTouch",
+  "app_id": "1cfc1c71",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

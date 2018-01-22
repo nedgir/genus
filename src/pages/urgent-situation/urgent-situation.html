@@ -1,0 +1,27 @@
+<ion-header>
+  <global-header page="URGENT SITUATION" group="emergency"></global-header>
+</ion-header>
+
+<ion-content>
+  <ion-item-divider color="light" text-left>
+    DESCRIBE THE SITUATION
+  </ion-item-divider>
+  <ion-list>
+    <ion-item class="border">
+      <ion-input [(ngModel)]="title" placeholder="Text Input"></ion-input>
+    </ion-item>
+    <ion-item text-wrap class="border">
+      <ion-textarea [(ngModel)]="notes" placeholder="example: {{firstName}} seems very confused, someone needs to go check in... If no one can make it, we need to callan ambulance"></ion-textarea>
+    </ion-item>
+    <ion-item class="border">
+      <ion-label><b>I will respond</b></ion-label>
+      <ion-toggle color="secondary" [(ngModel)]="respond"></ion-toggle>
+    </ion-item>
+    <ion-item class="border" (click)="submit()">
+      <button ion-button full positive clear>Submit</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <global-tab name="urgent-situation"></global-tab>
+</ion-footer>

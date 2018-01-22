@@ -1,0 +1,27 @@
+<ion-header>
+  <global-header page="OPEN INVITATIONS" group="community"></global-header>
+</ion-header>
+
+<ion-content class="no-scroll">
+  <div class="content-parent">
+    <div class="content-top">
+      <div class="list-segment">
+        <ion-segment [(ngModel)]="invitationType" (ionChange)="changeInvitaitonType()">
+          <ion-segment-button class="green" value="assistance">
+            Assistance
+          </ion-segment-button>
+          <ion-segment-button class="green" value="rsvp">
+            RSVP
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+    </div>
+    <div class="height-100">
+      <event-list [ascend]="false" listType="{{invitationType}}">
+      </event-list>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <global-tab></global-tab>
+</ion-footer>

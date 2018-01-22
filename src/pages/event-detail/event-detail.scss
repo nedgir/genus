@@ -1,0 +1,44 @@
+page-event-detail {
+  text-align: left;
+  font-family:  'Montserrat-Regular';
+  font-size: 18px;
+
+  ion-segment-button.segment-button.segment-button-disabled{
+      color: black;
+      border-color: white;
+      opacity: 1;
+  }
+
+  .observation-title {
+    margin-left: 10px;
+    margin-bottom: 0px;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .observation-item-text {
+    font-size: 15px;
+    font-family: 'Montserrat-Regular';
+  }
+
+  .thisContent {
+    background-color: #f5f5f0;
+
+    .thisItem{
+      background-color: #f5f5f0;
+    }
+  }
+
+  .thisLike{
+    color: #0000ff;
+    text-align: center;
+  }
+
+  .declineReason {
+    font-size: 12px;
+  }
+
+  .item-divider-md {
+    border-bottom: 0px;
+  }
+}

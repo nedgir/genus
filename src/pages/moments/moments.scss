@@ -1,0 +1,165 @@
+page-moments {
+  font-family: 'Montserrat-Regular';
+  $button-svg-dim: 60px;
+  $moments-blue: #355C7D;
+
+  ion-spinner {
+    width: 56px;
+    height: 56px;
+  }
+
+  ion-slides {
+    height: 75vw;
+  }
+
+  .play-pause-icon {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    z-index: 10;
+  }
+
+  .spinner-md-crescent circle {
+    stroke: $moments-blue;
+  }
+
+  .no-scroll .scroll-content {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 90px;
+    margin-bottom: 50px;
+  }
+
+  .button-container {
+    flex: 3;
+    display: flex;
+    align-items: center;
+
+    .box:active {
+      background-color: darkgray;
+    }
+
+    .box {
+      flex: 1;
+      color: black;
+      height: 90%;
+      margin: 10px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .inner-box {
+        display: block;
+        margin: auto;
+
+        .image-container {
+          position: relative;
+          height: $button-svg-dim;
+          width: $button-svg-dim;
+          margin: 0 auto;
+
+          .frame-number {
+            top: 0;
+            right: 0;
+            background-color: $moments-blue;
+            border-radius: 50%;
+            color: white;
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            line-height: 20px;
+            text-align: center;
+          }
+        }
+
+        div {
+          font-size: 15px;
+        }
+
+        img {
+          display: block;
+          height: $button-svg-dim;
+          width: $button-svg-dim;
+          background: none;
+        }
+      }
+    }
+  }
+
+  .delete-button {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+  }
+
+  .photo-slide {
+    font-size: 0;
+    width: 100vw;
+    height: 75vw;
+  }
+
+  .photo-slide-landscape {
+    font-size: 0;
+    width: 133.33vh;
+    height: 100vh;
+  }
+
+  .caption {
+    flex: 1;
+    color: white;
+    background-color: black;
+    text-align: left;
+    padding: 8px 10px;
+    position: relative;
+
+    > p {
+      margin: 0px;
+      position: absolute;
+    }
+    .image-title {
+      top: 10px;
+    }
+
+    .image-index {
+      bottom: 10px;
+    }
+
+  }
+
+  .no-moment-title-message {
+    height: 40%;
+    align-items: center;
+    display: flex;
+
+    .no-moment-title {
+      font-size: 25px;
+      text-align: center;
+    }
+    .no-moment-message {
+      padding-top: 10px;
+      font-size: 18px;
+      text-align: justify;
+      margin: 0 10vw;
+    }
+  }
+
+  .no-moment-image {
+    flex-grow: 1;
+    img {
+      background-color: none;
+      width: 202px;
+      height: 202px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
