@@ -1,0 +1,32 @@
+<ion-header>
+  <global-header page="HEALTH" group="health"></global-header>
+</ion-header>
+
+
+<ion-content class="community-content">
+  <ion-list>
+    <div *ngFor="let page of pages">
+      <!-- <button  ion-item (click)="navToPage(page)">
+        <img class="background-none" width="30" height="30" src="{{page.image}}"/>
+        <span class="page-option">{{ page.title }}</span>
+      </button> -->
+      <button  ion-item (click)="navToPage(page)">
+          <ion-row>
+              <ion-col col-9>
+                  <img class="background-none" width="30" height="30" src="{{page.image}}"/>
+                  <span class="page-option">{{ page.title }}</span>
+                  <div class="timmings date-time">{{page.date}}</div>
+              </ion-col>
+              <ion-col col-3>
+                <span class="page-option left">{{page.count}}<div *ngIf="page.title != 'Medical Profile'" class="total">total</div></span>
+              </ion-col>
+            </ion-row>
+       
+      </button>
+    </div>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <global-tab name="community-menu"></global-tab>
+</ion-footer>

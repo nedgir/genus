@@ -1,0 +1,38 @@
+page-health-menu {
+    font-family: 'Montserrat-Regular';
+    
+      .page-option {
+        position: absolute;
+        font-size: 18px;
+        padding-left: 10px;
+        color:  #5A5A5A ;
+        font-weight: bold;
+
+      }
+      .top{
+        margin-top: 2px;
+    }
+    .timmings{
+        margin-top: 32px;
+        font-size: 14px;
+        color: #8C8C8c
+        
+    }
+    .label-md {
+      margin-top: 0px !important;
+      margin-bottom: 3px !important;
+  }
+  .left{
+      margin-left: 14px;
+  }
+  .date-time{
+      margin-top: -6px;
+      margin-left: 40px;
+  }
+  .total{
+      margin-left: 11px;
+      font-size: 14px;
+      margin-top: -18px;
+      color: #8C8C8c
+  }
+}

@@ -67,6 +67,9 @@ page-dashboard {
   .community {
     background-color: rgb(22,159,132);
   }
+  .health {
+    background-color:  #FC625E ;
+  }
 
   .moments {
     background-color: #355C7D;
@@ -82,5 +85,18 @@ page-dashboard {
 
   .list-header-md {
     border-top: 0px;
+  }
+  .count{
+    margin-left: -30px;
+  }
+  .parameter{
+    margin-left: 42px;
+    margin-top: -30px;
+  }
+  .HealthICON{
+    color: white !important;
+  }
+  .space{
+    margin-top: 5px;
   }
 }

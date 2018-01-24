@@ -23,6 +23,55 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
+
+  <ion-list-header class="module-header health" tappable (click)="navToPage('HealthMenuPage')">
+    <img class="HealthICON" src="assets/HeartIconWhite/HealthICON.svg">
+    <span>HEALTH</span>
+  </ion-list-header>
+  <ion-grid>
+    <ion-row class="group-section" text-center>
+      <ion-col col-6 class="cell-border-bottom cell-border-right" tappable (click)="haveEvents && navToPage('ContactHistoryPage')">
+        <!-- <dashboard-stats-cell [data]="community_last_contact"></dashboard-stats-cell> -->
+     
+     
+        <strong>Observations</strong>
+       <ion-row>
+         <ion-col col-6>
+           <div class="space">E</div>
+           <div class="space">
+             <img  src="assets/phy_Happy_1.svg">
+           </div>
+         </ion-col>
+         <ion-col col-6>
+          <div class="space">P</div>
+          <div class="space"> <img src="assets/phy_Meh.svg"></div>
+         </ion-col>
+       </ion-row>
+
+      </ion-col>
+      <!-- <ion-col col-6 *ngIf="openInvitations" tappable class="cell-border-bottom" (click)="navToPage('OpenInvitationsPage')"> -->
+        <!-- <dashboard-stats-cell [data]="community_open_invitations"></dashboard-stats-cell> -->
+      <!-- </ion-col> -->
+      <!-- <ion-col col-3 *ngFor="let page of community_pages" [ngClass]="{'cell-border-bottom': !openInvitations}" tappable (click)="navToPage(page.component)">
+        <div class="padding-5"><b>{{page.title}}</b></div>
+        <img [src]="page.image" style="width:50px; height:50px;">
+      </ion-col> -->
+      <ion-col col-3  [ngClass]="{'cell-border-bottom': !openInvitations}" tappable (click)="navToPage(page.component)">
+        <div class="padding-5"><b>Heart Rate</b></div>
+        <h1 Class="count">89</h1><p class="parameter">BPM</p>
+        <!-- <img [src]="page.image" style="width:50px; height:50px;"> -->
+      </ion-col>
+      <ion-col col-3  [ngClass]="{'cell-border-bottom': !openInvitations}" tappable (click)="navToPage(page.component)">
+        <div class="padding-5"><b>Blood</b></div>
+        <h1 Class="count">160</h1><p class="parameter">BPM</p>
+        <!-- <img [src]="page.image" style="width:50px; height:50px;"> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
   <ion-list-header class="module-header moments" tappable (click)="haveMoments && navToPage('MomentsPage')">
     <img src="assets/camera_new.svg">
     <span>MOMENTS</span>
