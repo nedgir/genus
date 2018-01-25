@@ -45,8 +45,13 @@ page-dashboard {
   .cell-border-right {
     border-right: 2px solid $border-color;
   }
+  .box-width{
+    height: 84px;
+    width: 170px;
+  }
 
   .padding-5 {
+    font-size: 12px;
     padding: 5px 0px;
   }
 
@@ -54,7 +59,7 @@ page-dashboard {
     text-align: center;
     font-size: 12px;
     color: black;
-
+    
     > ion-col {
       height: 90px;
     }
@@ -99,4 +104,28 @@ page-dashboard {
   .space{
     margin-top: 5px;
   }
+  .tabs{
+    position: relative;;
+    height: 84px;;
+    width: 85px;
+  }
+  .scroll{
+    height: 84px;
+  
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    //position: absolute;
+    z-index: 1;
+    display: block;
+    width: 600px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+    contain: size style layout;
+  }
+  .maindiv{width: 600px;}
+  
 }

@@ -9,6 +9,7 @@ import { EventListInfiniteComponent } from './event-list-infinite/event-list-inf
 import { GlobalHeaderComponent } from './global-header/global-header';
 import { GlobalTabComponent } from './global-tab/global-tab';
 import { DashboardStatsCellComponent } from './dashboard-stats-cell/dashboard-stats-cell';
+import { ScrollableTabsComponent } from './scrollable-tabs/scrollable-tabs';
 
 const COMPONENTS = [
   ChangeImagePopover,
@@ -18,7 +19,8 @@ const COMPONENTS = [
   EventListInfiniteComponent,
   GlobalHeaderComponent,
   GlobalTabComponent,
-  DashboardStatsCellComponent
+  DashboardStatsCellComponent,
+  ScrollableTabsComponent
 ];
 
 @NgModule({

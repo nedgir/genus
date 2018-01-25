@@ -31,10 +31,12 @@ import { HttpModule } from '@angular/http';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { ResourceProvider } from '../providers/resource/resource';
 
+
 @NgModule({
   declarations: [
     MyApp,
-    PhoneNumberPipe
+    PhoneNumberPipe,
+    
   ],
   imports: [
     BrowserModule,
