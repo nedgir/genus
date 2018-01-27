@@ -26,8 +26,8 @@ export class MedicalProfilePage implements OnInit {
       { title: 'Surgeries', component: "ChatPage", image: 'assets/MedicalProfile_Icons/Surgeries.svg',count:'3' , date:'1/2/24/4:33pm'},
       { title: 'Allergies', component: "AllergiesPage", image: 'assets/MedicalProfile_Icons/Allergies.svg',count:'5' , date:'1/2/24/4:33pm'},
       { title: 'Medical Documents', component: "MedicalDocumentsPage", image: 'assets/MedicalProfile_Icons/MedicalDocuments.svg',count:'4' , date:'1/2/24/4:33pm'},
-      { title: 'Insurance', component: "InformationPage", image: 'assets/MedicalProfile_Icons/Insurance.svg',count:'3' , date:'1/2/24/4:33pm'},
-      { title: 'Family History', component: "InformationPage", image: 'assets/MedicalProfile_Icons/FamilyHistory.svg',count:'3' , date:'1/2/24/4:33pm'},
+      { title: 'Insurance', component: "InsurancePage", image: 'assets/MedicalProfile_Icons/Insurance.svg',count:'3' , date:'1/2/24/4:33pm'},
+      { title: 'Family History', component: "FamilyHistoryPage", image: 'assets/MedicalProfile_Icons/FamilyHistory.svg',count:'3' , date:'1/2/24/4:33pm'},
       { title: 'Medical Devices', component: "InformationPage", image: 'assets/MedicalProfile_Icons/MedicalDevices.svg',count:'6' , date:'1/2/24/4:33pm'},
     ];
     this.openInvitations = this.navParams.get('haveInvitations');
