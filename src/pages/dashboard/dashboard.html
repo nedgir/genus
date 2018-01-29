@@ -29,10 +29,11 @@
     <img class="HealthICON" src="assets/HeartIconWhite/HealthICON.svg">
     <span>HEALTH</span>
   </ion-list-header>
-  
-      <ion-grid class="scroll">
-          <ion-row  text-center>
-            <div class="cell-border-bottom cell-border-right box-width" tappable (click)="haveEvents && navToPage('ContactHistoryPage')">
+  <!-- <scroll-content >
+      <ion-scroll scrollX="true"  class="item">
+     
+          <ion-row  text-center  nowrap >
+            <ion-col col-6 class="cell-border-bottom cell-border-right box-width" tappable (click)="haveEvents && navToPage('ContactHistoryPage')">
             
            
            
@@ -50,35 +51,56 @@
                </ion-col>
              </ion-row>
       
-            </div>
+            </ion-col>
           
-            <div class="cell-border-bottom cell-border-right tabs" tappable *ngFor="let item of healthList" (click)="navToPage(item.component)">
+            <ion-col col-3 class="cell-border-bottom cell-border-right tabs" tappable *ngFor="let item of healthList" (click)="navToPage(item.component)">
               <div class="padding-5"><b>{{item.title}}</b></div>
               <div class="space">
                   <img  src="{{item.image}}">
                 </div>
-              <!-- <h1 Class="count">89</h1><p class="parameter">BPM</p> -->
+        
             
-            </div>
-            <!-- <div class="cell-border-bottom cell-border-right tabs" tappable (click)="navToPage(page.component)">
-              <div class="padding-5"><b>Blood</b></div>
-              <h1 Class="count">160</h1><p class="parameter">BPM</p>
-              
-            </div>
-            <div class="cell-border-bottom cell-border-right tabs" tappable (click)="navToPage(page.component)">
-                <div class="padding-5"><b>Blood</b></div>
-                <h1 Class="count">160</h1><p class="parameter">BPM</p>
-                
-            </div>
-              <div class="cell-border-bottom cell-border-right tabs " tappable (click)="navToPage(page.component)">
-                  <div class="padding-5"><b>Blood</b></div>
-                  <h1 Class="count">160</h1><p class="parameter">BPM</p>
-                  
-              </div> -->
+            </ion-col>
+          
           </ion-row>
-        </ion-grid>
+      </ion-scroll>
+  </scroll-content> -->
  
-  
+  <ion-scroll scrollX="true" style="height: 84px">
+      <div style="height: 84px; min-width: 650px;" >
+          <ion-row  text-center  nowrap >
+              <div class="cell-border-bottom cell-border-right box-width" tappable (click)="haveEvents && navToPage('ContactHistoryPage')">
+              
+             
+             
+                <strong>Observations</strong>
+               <ion-row>
+                 <ion-col >
+                   <div class="space">E</div>
+                   <div class="space">
+                     <img  src="assets/phy_Happy_1.svg">
+                   </div>
+                 </ion-col>
+                 <ion-col >
+                  <div class="space">P</div>
+                  <div class="space"> <img src="assets/phy_Meh.svg"></div>
+                 </ion-col>
+               </ion-row>
+        
+              </div>
+            
+              <div  class="cell-border-bottom cell-border-right tabs " tappable *ngFor="let item of healthList" (click)="navToPage(item.component)">
+                <div class="padding-5"><b>{{item.title}}</b></div>
+                <div class="space">
+                    <img  src="{{item.image}}">
+                  </div>
+          
+              
+                </div>
+            
+            </ion-row>
+      </div>
+    </ion-scroll>
 <!-- <ion-tabs #ionTabs [scrollable-tabs]="ionTabs" [opts]="scrollableTabsopts" selectedIndex='0' color="{{tabsColor}}" mode='{{tabsMode}}'
   tabsHighlight="true" tabsPlacement="{{tabsPlacement}}" class="tabs">
 

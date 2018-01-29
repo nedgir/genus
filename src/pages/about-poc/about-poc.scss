@@ -1,0 +1,19 @@
+page-about-poc {
+
+    font-family: 'Montserrat-Regular';
+    
+      .label-md-primary, .item-input .label-md-primary, .item-select .label-md-primary, .item-datetime .label-md-primary {
+       // position: absolute;
+        font-size: 18px;
+       // padding-left: 10px;
+        color:  #5A5A5A !important;
+        font-weight: bold;
+
+      }
+      .text-input-md{
+        font-size: 18px;
+        // padding-left: 10px;
+         color:  rgba(26, 24, 24, 0.877) !important;
+         font-weight: bold;
+      }
+}
