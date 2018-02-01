@@ -22,7 +22,7 @@ export class HealthMenuPage implements OnInit {
     this.pages = [
       { title: 'Medical Profile', component: "MedicalProfilePage", image: 'assets/LandingPage_Icons/MedicalProfile.svg',count:'22%' , date:'1/2/24/4:33pm'},
       { title: 'Care Report', component: "OpenInvitationsPage", image: 'assets/LandingPage_Icons/CareReport.svg',count:'2' , date:'1/2/24/4:33pm'},
-      { title: 'Vital Signs', component: "CalendarPage", image: 'assets/LandingPage_Icons/VitalSigns.svg',count:'3' , date:'1/2/24/4:33pm'},
+      { title: 'Vital Signs', component: "VitalSignsPage", image: 'assets/LandingPage_Icons/VitalSigns.svg',count:'3' , date:'1/2/24/4:33pm'},
       { title: 'Observations', component: "ChatPage", image: 'assets/LandingPage_Icons/Observations.svg',count:'6' , date:'1/2/24/4:33pm'},
       { title: 'Medications', component: "MembersPage", image: 'assets/LandingPage_Icons/Medications.svg',count:'8' , date:'1/2/24/4:33pm'},
       { title: 'Physicians', component: "InformationPage", image: 'assets/LandingPage_Icons/Physicians.svg',count:'9' , date:'1/2/24/4:33pm'},
