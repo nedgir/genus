@@ -158,6 +158,30 @@ export class GlobalHeaderComponent implements OnInit {
       case 'DASHBOARD':
         currentPage.instance.addCustomModulesAlert();
         break;
+        case 'FAMILY HISTORY':
+        this.navCtrl.push("AddFamilyhistoryPage", {}, { animate: true, direction: 'forward' });
+        break;
+        case 'EMERGENCY CONTACTS':
+        this.navCtrl.push("AddEmergencycontactPage", {}, { animate: true, direction: 'forward' });
+        break;
+        case 'MEDICAL CONDITIONS':
+        this.navCtrl.push("AddMedicalconditionPage", {}, { animate: true, direction: 'forward' });
+        break;
+        case 'SURGERIES':
+        this.navCtrl.push("AddSurgeryPage", {}, { animate: true, direction: 'forward' });
+        break;
+        case 'ALLERGIES':
+        this.navCtrl.push("AddAllergyPage", {}, { animate: true, direction: 'forward' });
+        break;
+        case 'MEDICAL DOCUMENTS':
+        this.navCtrl.push("AddMedicaldocumentPage", {}, { animate: true, direction: 'forward' });
+        break;
+        case 'INSURANCE':
+        this.navCtrl.push("AddInsurancePage", {}, { animate: true, direction: 'forward' });
+        break;
+        case 'MEDICAL DEVICES':
+        this.navCtrl.push("AddMedicaldevicesPage", {}, { animate: true, direction: 'forward' });
+        break;
       default:
         ;
     }
