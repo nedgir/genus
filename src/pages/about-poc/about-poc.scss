@@ -1,0 +1,45 @@
+page-about-poc {
+
+   // font-family: 'Montserrat-Regular';
+    
+      .label-md-primary, .item-input .label-md-primary, .item-select .label-md-primary, .item-datetime .label-md-primary {
+       // position: absolute;
+        font-size: 18px;
+       // padding-left: 10px;
+        color:  rgba(26, 24, 24, 0.877) !important;
+        font-weight: 500;
+
+      }
+      .text-input-md{
+        font-size: 18px;
+        // padding-left: 10px;
+         color:  rgba(26, 24, 24, 0.877) !important;
+       font-weight: 500;
+       
+      }
+      .tick{
+        color: rgba(0, 128, 0, 0.897);
+        size: 23;
+        top: 13px;
+        position: absolute;
+        z-index: 1;
+        right: 6px;
+       
+        font-size: 21px;
+      }
+      .button-md{
+        background-color: white !important;
+      }
+      .button-md{
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: 400;
+        color: #488aff !important;
+      }
+      .community-content{
+        background-color: rgba(211, 211, 211, 0.74);
+      }
+      .item-input ion-input, .item-input ion-textarea{
+        margin-right: 22px;
+      }
+}
